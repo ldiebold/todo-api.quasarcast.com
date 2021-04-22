@@ -2,7 +2,11 @@
 
 namespace App\Console;
 
-use App\Models\Post;
+use App\Models\Comment;
+use App\Models\Project;
+use App\Models\Todo;
+use App\Models\TodoList;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -28,9 +32,12 @@ class Kernel extends ConsoleKernel
     {
         // Delete old data
         $schedule->call(function () {
-            Post::where('created_at', '<', Carbon::now()->subMonth())
-                ->delete();
-        })->daily();
+            Comment::where('created_at', '<', Carbon::now()->subWeek())->delete();
+            Project::where('created_at', '<', Carbon::now()->subWeek())->delete();
+            Todo::where('created_at', '<', Carbon::now()->subWeek())->delete();
+            TodoList::where('created_at', '<', Carbon::now()->subWeek())->delete();
+            User::where('created_at', '<', Carbon::now()->subWeek())->delete();
+        })->everDay();
     }
 
     /**
