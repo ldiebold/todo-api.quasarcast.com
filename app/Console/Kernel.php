@@ -32,12 +32,12 @@ class Kernel extends ConsoleKernel
     {
         // Delete old data
         $schedule->call(function () {
-            Comment::where('created_at', '<', Carbon::now()->subWeek())->delete();
-            Project::where('created_at', '<', Carbon::now()->subWeek())->delete();
-            Todo::where('created_at', '<', Carbon::now()->subWeek())->delete();
-            TodoList::where('created_at', '<', Carbon::now()->subWeek())->delete();
-            User::where('created_at', '<', Carbon::now()->subWeek())->delete();
-        })->everDay();
+            Comment::where('created_at', '>', Carbon::now()->subWeek())->delete();
+            Project::where('created_at', '>', Carbon::now()->subWeek())->delete();
+            Todo::where('created_at', '>', Carbon::now()->subWeek())->delete();
+            TodoList::where('created_at', '>', Carbon::now()->subWeek())->delete();
+            User::where('created_at', '>', Carbon::now()->subWeek())->delete();
+        })->everyDay();
     }
 
     /**
