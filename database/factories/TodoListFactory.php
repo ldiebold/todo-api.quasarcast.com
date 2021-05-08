@@ -23,6 +23,8 @@ class TodoListFactory extends Factory
     {
         return [
             'label' => $this->faker->word(),
+            'color' => $this->faker->randomElement(['red', 'orange', 'blue-4', 'green-5', 'brown-6']),
+            'icon' => $this->faker->randomElement(['mdi-bookmark', 'mdi-fish', 'mdi-shopping', 'mdi-hammer']),
             'ip' => collect([
                 '123.123.123.123',
                 '222.222.222.222',
