@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Project extends ScopesToRequestIpModel
+class Project extends ScopesToRequestUuidModel
 {
     use HasFactory;
     use IsCommentable;

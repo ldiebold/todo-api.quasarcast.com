@@ -17,7 +17,7 @@ class CreateTodoListsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('ip');
+            $table->string('uuid');
             $table->foreignIdFor(\App\Models\Project::class)
                 ->nullable();
             $table->string('label');

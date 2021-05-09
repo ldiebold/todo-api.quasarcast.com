@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 
-class RequestersIpScope implements Scope
+class RequestersUuidScope implements Scope
 {
     /**
      * Apply the scope to a given Eloquent query builder.
@@ -18,7 +18,7 @@ class RequestersIpScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         if (!app()->runningInConsole()) {
-            $builder->where('ip', request()->ip());
+            $builder->where('uuid', request()->cookie('uuid'));
         }
     }
 }

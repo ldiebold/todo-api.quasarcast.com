@@ -23,10 +23,10 @@ class ProjectFactory extends Factory
     {
         return [
             'name' => $this->faker->words($nb = 2, $asText = true),
-            'ip' => collect([
-                '123.123.123.123',
-                '222.222.222.222',
-                '777.888.999'
+            'uuid' => collect([
+                '7f20c224-eeb7-440a-8cec-39fbd1c0042d',
+                '8fc59dba-9b3c-4240-ac7d-1e8f00703b72',
+                'ecaf0855-081d-4cfa-aabe-7d0fe94f9e4a'
             ])->random()
         ];
     }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends ScopesToRequestIpModel
+class User extends ScopesToRequestUuidModel
 {
     use HasFactory;
 

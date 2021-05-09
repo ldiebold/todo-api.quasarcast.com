@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Scopes\RequestersIpScope;
+use App\Scopes\RequestersUuidScope;
 use Illuminate\Database\Eloquent\Model;
 
-class ScopesToRequestIpModel extends Model
+class ScopesToRequestUuidModel extends Model
 {
     public static function boot()
     {
         static::creating(function ($model) {
             if (!app()->runningInConsole()) {
-                $model->ip = request()->ip();
+                $model->uuid = '4ea18674-e00d-4bdd-9650-c6f00d62cefe';
             }
         });
 
@@ -26,15 +26,15 @@ class ScopesToRequestIpModel extends Model
     protected static function booted()
     {
         if (!app()->runningInConsole()) {
-            static::addGlobalScope(new RequestersIpScope);
+            static::addGlobalScope(new RequestersUuidScope);
         };
     }
 
     protected $hidden = [
-        'ip'
+        'uuid'
     ];
 
     protected $guarded = [
-        'ip'
+        'uuid'
     ];
 }

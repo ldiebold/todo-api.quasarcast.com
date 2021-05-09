@@ -40,6 +40,11 @@ class Kernel extends ConsoleKernel
         })->everyDay();
     }
 
+    // created at 3pm
+    // it is now 4:01pm
+    // now sub 1 hour = 3:01
+    // 3pm < 3:01
+
     /**
      * Register the commands for the application.
      *
