@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use App\Scopes\RequestersUuidScope;
+use Cookie;
 use Illuminate\Database\Eloquent\Model;
+use Response;
 
 class ScopesToRequestUuidModel extends Model
 {
@@ -11,7 +13,7 @@ class ScopesToRequestUuidModel extends Model
     {
         static::creating(function ($model) {
             if (!app()->runningInConsole()) {
-                $model->uuid = '4ea18674-e00d-4bdd-9650-c6f00d62cefe';
+                $model->uuid = request()->cookie('uuid');
             }
         });
 
