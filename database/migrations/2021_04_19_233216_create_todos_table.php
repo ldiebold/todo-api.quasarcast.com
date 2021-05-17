@@ -19,7 +19,7 @@ class CreateTodosTable extends Migration
             $table->string('uuid');
 
             $table->string('label');
-            $table->boolean('complete');
+            $table->boolean('complete')->default(0);
             $table->foreignIdFor(\App\Models\TodoList::class)
                 ->constrained();
         });
