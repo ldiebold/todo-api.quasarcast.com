@@ -21,7 +21,7 @@ class CreateTodosTable extends Migration
             $table->string('label');
             $table->boolean('complete')->default(0);
             $table->foreignIdFor(\App\Models\TodoList::class)
-                ->constrained();
+                ->nullable();
         });
     }
 
