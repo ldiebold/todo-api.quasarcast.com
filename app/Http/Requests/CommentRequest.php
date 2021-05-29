@@ -9,14 +9,8 @@ class CommentRequest extends Request
     public function commonRules(): array
     {
         return [
-            'user_id' => 'exists:App\Models\User,id'
+            'user_id' => 'exists:App\Models\User,id',
+            'body' => 'required'
         ];
     }
-
-    // public function storeRules(): array
-    // {
-    //     return [
-    //         'status' => 'required|in:draft,review'
-    //     ];
-    // }
 }
