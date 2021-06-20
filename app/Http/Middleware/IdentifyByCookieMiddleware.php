@@ -27,7 +27,7 @@ class IdentifyByCookieMiddleware
         $response = $next($request);
         return $response->withCookie(
             cookie()->forever('uuid', $uuid)
-                ->withSameSite('lax')
+                ->withSameSite('none')
         );
     }
 }
