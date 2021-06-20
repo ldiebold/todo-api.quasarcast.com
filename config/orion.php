@@ -11,12 +11,12 @@ return [
     'specs' => [
         'info' => [
             'title' => env('APP_NAME'),
-            'description' => null,
+            'description' => 'Free Todo API',
             'terms_of_service' => null,
             'contact' => [
-                'name' => null,
-                'url' => null,
-                'email' => null,
+                'name' => 'Luke Diebold',
+                'url' => 'https://quasarcast.com',
+                'email' => 'luke@ldiebold.com',
             ],
             'license' => [
                 'name' => null,
@@ -25,7 +25,7 @@ return [
             'version' => '1.0.0',
         ],
         'servers' => [
-            ['url' => env('APP_URL').'/api', 'description' => 'Default Environment'],
+            ['url' => env('APP_URL'), 'description' => 'Default Environment'],
         ],
     ],
 ];

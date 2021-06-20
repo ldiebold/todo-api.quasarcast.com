@@ -16,4 +16,19 @@ class ProjectsController extends Controller
      * @var string $model
      */
     protected $model = Project::class;
+
+    public function filterableBy(): array
+    {
+        return [
+            'name'
+        ];
+    }
+
+    public function includes(): array
+    {
+        return [
+            'todo_lists',
+            'todo_lists.todos'
+        ];
+    }
 }

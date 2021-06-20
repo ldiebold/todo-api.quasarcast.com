@@ -16,4 +16,12 @@ class TodosController extends Controller
      * @var string $model
      */
     protected $model = Todo::class;
+
+    public function filterableBy(): array
+    {
+        return [
+            'label',
+            'complete'
+        ];
+    }
 }

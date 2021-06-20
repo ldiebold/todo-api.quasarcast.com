@@ -14,7 +14,7 @@ class Project extends ScopesToRequestUuidModel
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function todoLists()
+    public function todo_lists()
     {
         return $this->hasMany(\App\Models\TodoList::class);
     }

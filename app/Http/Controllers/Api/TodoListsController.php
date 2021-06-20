@@ -16,4 +16,19 @@ class TodoListsController extends Controller
      * @var string $model
      */
     protected $model = TodoList::class;
+
+    public function filterableBy(): array
+    {
+        return [
+            'label',
+            'project_id'
+        ];
+    }
+
+    public function includes(): array
+    {
+        return [
+            'todos'
+        ];
+    }
 }
