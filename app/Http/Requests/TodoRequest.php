@@ -9,13 +9,15 @@ class TodoRequest extends Request
     public function commonRules(): array
     {
         return [
-            'label' => 'required|min:3',
+            'label' => 'min:3',
             'todo_list_id' => 'nullable|exists:App\Models\TodoList,id'
         ];
     }
 
     public function storeRules(): array
     {
-        return [];
+        return [
+            'label' => 'required'
+        ];
     }
 }
