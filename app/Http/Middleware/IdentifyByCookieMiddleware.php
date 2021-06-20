@@ -25,7 +25,6 @@ class IdentifyByCookieMiddleware
         $uuid = Str::uuid();
         $request->cookies->set('uuid', $uuid);
         $response = $next($request);
-        // Cookie::queue(Cookie::forever('uuid', $uuid));
         return $response->withCookie(cookie()->forever('uuid', $uuid));
     }
 }
