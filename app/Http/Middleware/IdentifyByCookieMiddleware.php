@@ -25,6 +25,9 @@ class IdentifyByCookieMiddleware
         $uuid = Str::uuid();
         $request->cookies->set('uuid', $uuid);
         $response = $next($request);
-        return $response->withCookie(cookie()->forever('uuid', $uuid));
+        return $response->withCookie(
+            cookie()->forever('uuid', $uuid)
+                ->withSameSite('lax')
+        );
     }
 }
